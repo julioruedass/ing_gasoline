@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyect</title>
+
+    <!--  Booststrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body style=" background-image: url(model.jpg);">
+
+    <!--  NAVEGASION   -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="height:90px" >
+        <div class="container">
+           <img src="AUTO.png" class="rounded-circle navbar-brand" alt="Monito" style="width:120px; ">
+            
+            <a class="navbar-brand text-success" href="#" style="font: bold 200% sans-serif ">GASOLINE</a>
+           
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">   
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <h4><a class="nav-link text-white" href="" data-toggle="modal" data-target="#signinModal" >Iniciar </a></h4>
+                    </li>
+
+                    <li class="nav-item">
+                        <h4><a class="nav-link text-white" href="" data-toggle="modal" data-target="#signupModal">Registrarme</a> </h4>     
+                        </li>
+
+                        <li class="nav-item">
+                            <h4><a class="nav-link text-white" href="" data-toggle="modal" data-target="#xModal">xXx</a> </h4>     
+                            </li>   
+
+                    <li class="nav-item">
+                        <h4><a class="nav-link text-white" href="#" id="logout">Salir</a></h4>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container-fluid p-1  bg-success"></div>
+
+
+    <!-- Main conrainer-->
+    <div class="container   p-4">
+<div class="row ">
+<div class="col-md-6 offset-md-3">
+<ul  class="list-group userli">
+   <!--inserta datos de firestore Usuarios -->
+</ul>
+</div>
+</div> 
+    </div>
+
+
+    <!--MODAL SECCION-->
+
+    <div class="container-fluid" ></div>
+
+    <!-- Modal  Signup-->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header  text-white" style="background-color: black;">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font: 150% sans-serif">Registro</h5>
+                    <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Linea separadora  -->
+                <div class="container-fluid p-1  bg-success" ></div>
+                <div class="modal-body">
+                    <!--Formulario Registro signup-->
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <input type="email" id="signup-correo" class="form-control" placeholder="Correo" required style="font-family: Consolas, monospace">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="signup-password" class="form-control" placeholder="Password" required style="font-family: Consolas, monospace">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="signup-idtargeta" class="form-control" placeholder="Dispositivo numero"  style="font-family: Consolas, monospace">
+                        </div>
+                        <!-- Cerrar <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  -->
+                        <button type="submit" class="btn btn-outline-success text-dark " style="font: condensed 120% sans-serif">Registrarme</button>
+                        <button type="Limpiar" class="btn btn-outline-success text-success " style="font: condensed 120% sans-serif">Opcion</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
+ <!-- Modal signin-->
+ <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header  text-white" style="background-color: black;">
+                <h5 class="modal-title" id="exampleModalLabel" style="font: 150% sans-serif">Ingreso</h5>
+                <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+               <!--Linea separadora  -->
+               <div class="container-fluid p-1  bg-success" ></div>
+            <div class="modal-body">
+                <!--Formulario Registro signup-->
+                <form id="signin-form">
+                    <div class="form-group">
+                        <input type="email" id="signin-correo" class="form-control" placeholder="Correo" required style="font-family: Consolas, monospace">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signin-password" class="form-control" placeholder="Password" required style="font-family: Consolas, monospace">
+                    </div>
+                    <!-- Cerrar <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  -->
+                    <button type="submit" class="btn btn-outline-success text-dark " style="font: condensed 120% sans-serif">Iniciar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--                                           -->
+<!--      Modal XXX                            -->
+<!--                                           -->
+<div class="modal fade" id="xModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header  text-white" style="background-color: black;">
+                <h5 class="modal-title" id="exampleModalLabel" style="font: 150% sans-serif">Ingreso</h5>
+                <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+               <!--Linea separadora  -->
+               <div class="container-fluid p-1  bg-success" ></div>
+            <div class="modal-body">
+                <!--Formulario Registro signup-->
+                <form id="x-form">
+                    <div class="form-group">
+                        <input type="email" id="x-correo" class="form-control" placeholder="Correo" required style="font-family: Consolas, monospace">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="x-password" class="form-control" placeholder="Password" required style="font-family: Consolas, monospace">
+                    </div>
+                    <!-- Cerrar <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  -->
+                    <button type="submit" class="btn btn-outline-success text-dark " style="font: condensed 120% sans-serif">Iniciar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--                                           -->
+<!--                                           -->
+<!--                                           -->
+<!--                                           -->
+<!--                                           -->
+<!--                                           -->
+<!--                                           -->
+<!--                                           -->
+
+
+    <!-- bootstrap Scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCcym3YzQfsegCmpeazPPAZjFiHZVqLJ7I",
+    authDomain: "cuentagas-799b1.firebaseapp.com",
+    databaseURL: "https://cuentagas-799b1.firebaseio.com",
+    projectId: "cuentagas-799b1",
+    storageBucket: "cuentagas-799b1.appspot.com",
+    messagingSenderId: "290771540744",
+    appId: "1:290771540744:web:1fe9e739d27e6719aceabd"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const fs= firebase.firestore();
+</script>
+
+
+<!--Customer Code   Codigo PErzonalizado-->
+
+<script src="main.js"></script>
+</body>
+
+</html>
