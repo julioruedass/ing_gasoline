@@ -36,6 +36,24 @@
 
 
 
+//Codigo con wst Flota
+var checkbox = document.querySelector("input[name=flota]");
+checkbox.addEventListener( 'change', function() {
+    const flotavar = document.querySelector('.flotaid');
+    if(this.checked) {
+        
+let inp=`<input type="text" id="signup-flota" class="form-control" 
+placeholder="Id Flota"  style="font-family: Consolas, monospace">`;
+flotavar.innerHTML =inp;
+        console.log("Flota True");
+    } else {
+       // let descrip = document.getElementById('descripcion6').setAttribute('type', 'text');
+       flotavar.innerHTML='<a style="font-family: Consolas, monospace">El Codigo de Flota es Obligatorio</ha>';
+        console.log("Flota False");
+    }
+  
+});
+
 
 
 ////Codigo de envio de formulario signin-form con firestore
@@ -83,7 +101,7 @@ data.forEach(doc  => {
     console.log(post)
     const li =`
       <tr>
-      <td>${post.user_name}</td>
+      <td><i class=" text-warning fas fa-database"></i> ${post.user_name}</td>
       <td>${post.user_password}</td>
       <td>${post.user_target}</td>
       </tr>
