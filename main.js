@@ -1,7 +1,8 @@
 
 ////Codigo de envio de formulario signup-form con firestore
  const signup_form = document.querySelector('#signup-form'); 
-signup_form.addEventListener('submit',(e)=>{
+
+ signup_form.addEventListener('submit',(e)=>{
     e.preventDefault();
  
     const user_name = document.querySelector('#signup-correo').value;
@@ -34,25 +35,7 @@ signup_form.addEventListener('submit',(e)=>{
 }) 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-const x_form = document.querySelector('#x-form'); 
-x_form.addEventListener('submit',async(e)=>{
-    e.preventDefault();
 
-
-    const user_name = document.querySelector('#x-correo').value;
-    const user_password = document.querySelector('#x-password').value;
-    console.log('prueba de mi boton  ' + xcorreo  + '   '   + xpassword);
-
-    const response = await fs.collection('users').doc().set({
-        user_name,
-        user_password
-    })
-    console.log(response)
-    console.log('prueba de mi boton  ' + xcorreo  + '   '   + xpassword);
-}) 
-///////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
 
 
 ////Codigo de envio de formulario signin-form con firestore
@@ -93,21 +76,22 @@ logout.addEventListener("click",e =>
 const postList = document.querySelector('.userli');
 const setupPost =data => {
     if(data.length){
-let html ="";
-
+let html =``;
 //efecto hover list group item action
 data.forEach(doc  => {
     const post =doc.data()
     console.log(post)
     const li =`
-    <li class="list-group-item list-group-item-action">
-    <h5>${post.user_name}</h5>
-    <p>${post.user_password}</p>
-    </li>
+      <tr>
+      <td>${post.user_name}</td>
+      <td>${post.user_password}</td>
+      <td>${post.user_target}</td>
+      </tr>
     `;
-    html += li;});
+    html += li;
+});
 postList.innerHTML =html;
-    } else {  postList.innerHTML = '<p class="text-center text-white">Seccion Finalizada</p>'; }
+    } else {  postList.innerHTML = '<p class="text-warning" >Seccion Finalizada</p>'; }
 };
 
 
